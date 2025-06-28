@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mediaqueries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav id="navbar">
+        <div class="logo-container">
+            <a href="#"><h2>Mackenzie Chung</h2></a>
+        </div>
+        <ul id="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="resume.pdf" target="_blank"><img src="icons/doc.svg"> Résumé</a></li>
+        </ul>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo-container">
+            <a href="#"><h2>Mackenzie Chung</h2></a>
+        </div>
+        <button id="hamburger-btn" onclick="toggleMenu()">
+            <img src="icons/hamburger-button.svg" alt="Menu" id="hamburger-icon">
+        </button>
+        <ul id="ham-list">
+            <li><a href="#about" onClick="toggleMenu()">About</a></li>
+            <li><a href="#work" onClick="toggleMenu()">Portfolio</a></li>
+            <li><a href="#contact" onClick="toggleMenu()">Contact</a></li>
+            <li><a href="resume.pdf" target="_blank" onClick="toggleMenu()"><img src="icons/doc.svg"> Résumé</a></li>
+        </ul>
+        
+    </nav>
+    <div id ="info-container">
+        <!-- HOME SECTION -->
+        <div id="home">
+            <h2>Just trying my best everyday. </h2>
+            <div id="home-model-container">
+                <img src="images/moon.svg" alt="Moon" class="moon">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <button id="fun-button">One Step at a Time</button>
+        </div>
+        <!-- ABOUT SECTION -->
+        <div id="about">
+            <h1>Hi, I'm Mackenzie!</h1>
+            <br>
+            <div id="profile-container">
+                <div class="profile-info">
+                    <p>I'm current student at <span>Brandeis University</span> who's pursuing a Bachelors in
+                    Computer Science. I enjoy creating digital art and finding ways to incorporate them into programming projects.</p>
+                    <p>I love to draw and explore different digital art mediums like pixel art, vector art, and 3d modeling while
+                        jamming out to some of my favorite music genres like Electro Swing, Pop, and Musicals.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- WORK SECTION -->
+        <div id="work">
+            <h1>Portfolio</h1>
+            <h2>Programming Projects</h2>
+
+            <hr><br>
+            <!-- PROGRAMMING PROJECTS -->
+            <div id="project-container">
+                <div class="project">
+                    <div class="project-img"></div>
+                    <div class="project-content">
+                            <h3>Personal Website</h3>
+                            <p>This website is a personal project that I created to showcase my skills and interests. It is built using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img"></div>
+                    <div class="project-content">
+                        <h3><a href="https://deborahengelberg.github.io/COSI116A-Brandeis-InfoVis-Fall24.github.io/" target="_blank">Visualization Project (Fall 2024) </a></h3>
+                        <p>This is a team project for COSI116a (Intro. to Data Visualization). 
+                            We used HTML/CSS/JS, TopoJSON, Pandas, and D3.js to build our project.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h2>Hobbies</h2>
+            <!-- <p>#DigitalArt #TraditionalArt #PixelArt #3dModeling</p> -->
+            <hr><br>
+            <!-- GALLERY -->
+                <div class="gallery">
+                    <!-- <img src="gallery/sketch1.png" class="sketches" alt="Test portrait" 
+                        data-description="Test: Placeholder Description" onclick="zoomImage(this)">
+                    <img src="gallery/img2.jpg" class="sketches" onclick="zoomImage(this)">
+                    <img src="gallery/img3.jpg" class="sketches" onclick="zoomImage(this)">
+                    <img src="gallery/img4.jpg" class="sketches" onclick="zoomImage(this)">
+                    <img src="gallery/img5.jpg" class="sketches" onclick="zoomImage(this)"> -->
+                </div>
+        </div>
+        <div id="contact">
+            <h1>Thanks for Visting!</h1>
+            <br>
+            <p>Please feel free to reach out via email at <a href="mailto:mackenzie.chung@gmail.com">mackenzchung@gmail.com</a></p>
+            <p>Or connect with me on social media:</p>
+            <ul>
+                <li><img src="icons/linkdn.png" alt="LinkedIn"> <a href="https://www.linkedin.com/in/mackenzie-chung-123456789/" target="_blank">@mackenzC</a></li>
+                <li><img src="icons/github.png" alt="GitHub"> <a href="https://github.com/mackenzie-chung" target="_blank">@mackenzC</a></li>
+            </ul>
+            <div id="contact-model-container"></div>
+        </div>
+    </div>
+    <footer>
+        <!-- Heart options:💚❤️ -->
+        <p>Made with 💚 by Mackenzie Chung</p>
+        </footer>
+    <script type="module" src="js/model.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
