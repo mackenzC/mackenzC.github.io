@@ -60,8 +60,8 @@ let model;
 const loader = new GLTFLoader();
 // loader.load('./models/kiwi_scene.glb', function(gltf) {
 
-const basePath = import.meta.env.PROD ? '/test-deploy' : '';
-loader.load(`${basePath}/models/kiwi_scene.glb`, function(gltf) {
+const modelPath = `${import.meta.env.BASE_URL}models/kiwi_scene.glb`;
+loader.load(modelPath, function(gltf) {
 
     model = gltf.scene;
     scene.add(model);
