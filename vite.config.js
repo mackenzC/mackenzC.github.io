@@ -3,5 +3,5 @@
  */
 
 export default {
-    base: process.env.NODE_ENV === 'production' ? '/testDeploy/' : ''
+    base: process.env.NODE_ENV === 'production' ? '/test-deploy/' : ''
 }
