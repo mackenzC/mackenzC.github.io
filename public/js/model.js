@@ -58,7 +58,7 @@ let mixer;
 let model;
 
 const loader = new GLTFLoader();
-loader.load('models/kiwi_scene.glb', function(gltf) {
+loader.load('/models/kiwi_scene.glb', function(gltf) {
     model = gltf.scene;
     scene.add(model);
 
