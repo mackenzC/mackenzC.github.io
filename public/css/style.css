@@ -144,6 +144,16 @@ img {
     align-items: center;
 }
 
+.logo-container a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+}
+
+.logo-container a:hover {
+    color: lightcoral;
+}
+
 /* ----- HAMBURGER NAV ------ */
 #hamburger-nav {
     display: none;
@@ -251,6 +261,7 @@ img {
     opacity: 0;
     animation: twinkle 2s infinite ease-in-out;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    z-index: -1;
 }
 
 @keyframes twinkle {
@@ -335,6 +346,7 @@ img {
 
 /* ---- FUN BUTTON ---- */
 #fun-button {
+    font-family: "Fredoka", sans-serif;
     background: linear-gradient(to right, darkred 0%, darkred 50%, lightcoral 50%, lightcoral 100%);
     background-size: 200% 100%;
     background-position: 100% 0;
