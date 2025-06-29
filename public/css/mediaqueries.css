@@ -33,8 +33,8 @@
 
     /* ------ ABOUT Modifications -------- */
     #about {
-        height: auto;
         padding-top: 150px;
+        padding-bottom: 100px;
         margin: 0 20px;
     }
 
@@ -43,14 +43,14 @@
         align-items: center;
     }
 
-    #profile-pic {
-        width: 300px;
-        height: 300px;
-    }
-
     .profile-info p {
         text-align: justify;
         text-justify: inter-word;
+    }
+
+    /* ------ PROJECTS Modification ------- */
+    .tags {
+        font-size: 15px;
     }
 }
 
@@ -61,11 +61,6 @@
 
     #about .profile-info {
         width: 80%;
-    }
-
-    #profile-pic img {
-        width: 250px;
-        height: 250px;
     }
 
     #work h2, h3 {
@@ -85,9 +80,9 @@
         width: 100%;
     }
     #work .project-img {
-        width: 200px;
-        height: 200px;
-        margin: 10px 0;
+        /* width: 270px;
+        height: 200px; */
+        /* margin: 10px 0; */
     }
 
     #work .project-content {
@@ -116,6 +111,11 @@
         font-size: 20px;
     }
 
+    #work .project-img {
+        width: 200px;
+        height: 150px;
+    }
+
     #about p,
     #work p,
     #contact p {
@@ -125,4 +125,18 @@
     #contact {
         text-align: center;
     }
+
+    #scroll-to-top {
+        bottom: 5%;
+        right: 5%;
+        width: 35px;
+        height: 35px;
+        border: 1px solid #fff;
+    }
+
+    #scroll-to-top img{
+        width: 35px;
+        height: 35px;
+    }
+
 }

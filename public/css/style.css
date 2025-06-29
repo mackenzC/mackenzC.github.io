@@ -6,6 +6,24 @@ html {
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-position: center center;
+    background-color: rgba(153, 205, 50, 0.664);
+    border: 3px solid rgb(24, 25, 32);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    /* background-color: rgb(0, 0, 0); */
+    width: 10px;
+    
+}
+
+
 body {
     overflow-x: hidden;
     margin: 0;
@@ -21,6 +39,14 @@ body {
 span {
     color: lightcoral;
     /* font-weight: bold; */
+}
+
+.tags {
+    border: 1px solid lightcoral;
+    border-radius: 50px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 3px;
 }
 
 h1 {
@@ -193,7 +219,7 @@ img {
 }
 
 #ham-list li a:hover {
-    color: lightcoral;
+    color: yellowgreen;
 }
 
 #hamburger-icon {
@@ -352,8 +378,8 @@ img {
     background-position: 100% 0;
     color: white;
     border: none;
-    padding: 15px 50px;
-    font-size: 20px;
+    padding: 15px 35px;
+    font-size: 23px;
     margin: 40px;
     cursor: pointer;
     border-radius: 50px;
@@ -369,8 +395,9 @@ img {
         ABOUT
    ------------------ */
 #about {
-    height: 67vh;
+    height: auto;
     padding-top: 300px;
+    padding-bottom: 200px;
 }
 
 #profile-container {
@@ -414,6 +441,7 @@ img {
 #work {
     height: auto;
     padding-top: 150px;
+    padding-bottom: 100px;
     margin: 0 20px;
 }
 
@@ -428,7 +456,7 @@ img {
 
 #work a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     font-size: 25px;
 }
 
@@ -436,9 +464,18 @@ img {
     color: lightcoral;
 }
 
+#work img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+#work p {
+    font-size: 17px;
+}
+
 /* ----- PROGRAMMING PROJECTS ----- */
 #project-container {
-    color: rgba(255, 255, 255, 0.5);
     width: 85%;
     height: auto;
     display: flex;
@@ -448,6 +485,7 @@ img {
 }
 
 .project {
+    filter: opacity(0.7); /* This applies to the entire container */
     display: flex;
     flex-direction: row;
     background-color: rgba(50, 56, 69, 0.386);
@@ -461,6 +499,7 @@ img {
 }
 
 .project:hover {
+    filter: opacity(1);
     color: rgb(255, 255, 255);
     transform: scale(1.02);
 }
@@ -468,10 +507,10 @@ img {
 .project-img {
     flex-shrink: 0;
     background-color: rgb(11, 11, 11);
-    width: 290px;
-    height: 250px;
+    width: 270px;
+    height: 200px;
     border-radius: 8px;
-    margin: 10px;
+    margin: 0;
     object-fit: cover;
     object-position: center;
 }
@@ -513,7 +552,7 @@ img {
 }
 
 #contact a:hover {
-    color: coral;
+    color: rgb(171, 91, 91);
 }
 
 #contact-model-container {
@@ -543,4 +582,40 @@ footer p {
     color: rgba(255, 255, 255, 0.68);
 }
 
+/* ------------------
+    SCROLL TO TOP
+    ----------------*/
 
+#scroll-to-top {
+    position: fixed;
+    bottom: 7%;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scroll-to-top img {
+    width: 50px;
+    height: 50px;
+}
+
+#scroll-to-top:hover {
+    border: 2px solid yellowgreen;
+    transform: scale(1.1);
+}
+
+#scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}

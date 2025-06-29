@@ -12,7 +12,7 @@ function toggleMenu() {
     menu.classList.toggle('open');
 
     if (menu.classList.contains('open')) {
-        button.style.backgroundColor = 'grey'; // Change the bg color to something else
+        button.style.backgroundColor = 'rgb(49, 51, 62)'; // Change the bg color to something else
     } else {
         button.style.backgroundColor = ''; // Resets bg color
         
@@ -32,8 +32,18 @@ document.addEventListener('click', function(event) {
     }
 });
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 
-// function toggleTheme() {
-//     const body = document.body;
-//     body.classList.toggle('light-mode');
-// }
+window.addEventListener('scroll', function() {
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+    if (window.pageYOffset > 300) {
+        scrollToTopButton.classList.add('show');
+    } else {
+        scrollToTopButton.classList.remove('show');
+    }
+});
