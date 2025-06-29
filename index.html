@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/icons/kiwi-profile.svg"> <!-- placeholder favicon -->
+    <link rel="icon" href="⭐"> <!-- placeholder favicon -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/mediaqueries.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,10 @@
     <title>Mackenzie Chung</title>
 </head>
 <body>
+    <div id="loading-screen">
+        <img src="/misc/kiwi-idle.gif" alt="Loading">
+        <h2>Loading...</h2>
+    </div>
     
     <nav id="navbar">
         <div class="logo-container">
@@ -44,7 +48,7 @@
         <div id="home">
             <h2>Just trying my best everyday. </h2>
             <div id="home-model-container">
-                <img src="images/moon.svg" alt="Moon" class="moon">
+                <img src="/misc/moon.svg" alt="Moon" class="moon">
                 <div class="star"></div>
                 <div class="star"></div>
                 <div class="star"></div>
@@ -69,6 +73,7 @@
                     <p>I love to draw and explore different digital art mediums like pixel art, vector art, and 3d modeling while
                         jamming out to some of my favorite music genres like Electro Swing, Pop, and Musicals.
                     </p>
+                    <img src="/misc/kiwi-idle.gif" alt="Kiwi Idle" id="kiwi-idle">
                 </div>
             </div>
         </div>
@@ -135,6 +140,6 @@
     </button>
     <script type="module" src="/public/js/model.js"></script>
     <script type="module" src="/public/js/contactmodel.js"></script>
-    <script src="/js/main.js"></script>
+    <script type=" module" src="/public/js/main.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { loadingManager } from './main.js';
 
 
 const container = document.getElementById('home-model-container');
@@ -61,8 +62,7 @@ controls.maxDistance = 6; // Maximum zoom distance
 let mixer;
 let model;
 
-const loader = new GLTFLoader();
-// loader.load('./models/kiwi_scene.glb', function(gltf) {
+const loader = new GLTFLoader(loadingManager);
 
 const modelPath = `${import.meta.env.BASE_URL}models/kiwi_scene.glb`;
 loader.load(modelPath, function(gltf) {

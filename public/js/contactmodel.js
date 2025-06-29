@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { loadingManager } from './main.js';
 
 const container = document.getElementById('contact-model-container');
 const scene = new THREE.Scene();
@@ -54,7 +55,7 @@ controls.enableZoom = false;
 let mixer;
 let model;
 
-const loader = new GLTFLoader();
+const loader = new GLTFLoader(loadingManager);
 // loader.load('./models/kiwi_scene.glb', function(gltf) {
 
 const modelPath = `${import.meta.env.BASE_URL}models/world.glb`;
