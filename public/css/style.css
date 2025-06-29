@@ -488,6 +488,7 @@ img {
     height: 70vh;
     padding-top: 100px;
     margin: 0 20px;
+    overflow-y: hidden;
 }
 
 #contact ul {
@@ -515,6 +516,15 @@ img {
     color: coral;
 }
 
+#contact-model-container {
+    position: relative;
+    width: 50vw;
+    height: 63vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 /* ------------------
         FOOTER
    ------------------ */

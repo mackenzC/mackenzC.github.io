@@ -95,3 +95,34 @@
         text-align: justify;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .logo-container a {
+        font-size: 17px;
+    }
+
+    #home-model-container {
+        width: 100%;
+        height: 50vh;
+    }
+
+    #about h1,
+    #work h1,
+    #contact h1 {
+        font-size: 30px;
+    }
+
+    #work h2{
+        font-size: 20px;
+    }
+
+    #about p,
+    #work p,
+    #contact p {
+        font-size: 16px;
+    }
+
+    #contact {
+        text-align: center;
+    }
+}

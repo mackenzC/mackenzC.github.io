@@ -2,22 +2,18 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-
-const container = document.getElementById('home-model-container');
-
+const container = document.getElementById('contact-model-container');
 const scene = new THREE.Scene();
 
 // Camera setup ----------
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-camera.position.set(1, 0, 4);
+camera.position.set(3.5, 1.5, -2);
 
 // Renderer setup ---------
 const renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
 renderer.setSize(container.clientWidth, container.clientHeight); //use container size!!
 renderer.setAnimationLoop( animate );
-
 container.appendChild( renderer.domElement );
-
 
 function resizeRenderer() {
     const width = container.clientWidth;
@@ -28,9 +24,6 @@ function resizeRenderer() {
 }
 window.addEventListener('resize', resizeRenderer);
 resizeRenderer();
-
-
-
 
 // Lighting setup ----------
 const skyColor = 0xB1E1FF;  // light blue
@@ -47,15 +40,15 @@ directLight.position.set(0, 6, 7.5);
 scene.add(directLight);
 scene.add(directLight.target);
 
-
-
 // Orbit Controls setup ----------
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // an animation effect
 
-// Min/max zoom
-controls.minDistance = 2; // Minimum zoom distance
-controls.maxDistance = 6; // Maximum zoom distance
+// Locks yaxis
+controls.minPolarAngle = Math.PI / 2; // 90 degrees
+controls.maxPolarAngle = Math.PI / 2; // 90 degrees
+
+controls.enableZoom = false;
 
 // Model loading & animation ----------
 let mixer;
@@ -64,7 +57,7 @@ let model;
 const loader = new GLTFLoader();
 // loader.load('./models/kiwi_scene.glb', function(gltf) {
 
-const modelPath = `${import.meta.env.BASE_URL}models/kiwi_scene.glb`;
+const modelPath = `${import.meta.env.BASE_URL}models/world.glb`;
 loader.load(modelPath, function(gltf) {
 
     model = gltf.scene;
@@ -73,14 +66,20 @@ loader.load(modelPath, function(gltf) {
     // Animation setup
     mixer = new THREE.AnimationMixer(model);
     const clips = gltf.animations;
-    const clip = THREE.AnimationClip.findByName(clips, 'ArmatureAction');
-    const action = mixer.clipAction(clip);
-    action.play();
+    const clip1 = THREE.AnimationClip.findByName(clips, 'WalkingAction');
+    const clip2 = THREE.AnimationClip.findByName(clips, 'SphereAction');
+    
+    const action1 = mixer.clipAction(clip1);
+    const action2 = mixer.clipAction(clip2);
+    action2.timeScale = -0.3; // Slow down the second animation
+
+    action1.play();
+    action2.play();
 
     console.log('Model loaded successfully:', gltf);
     console.log('Model position:', model.position);
 
-    model.position.set(0, 0, 0); // position.set(x, y, z)
+    model.position.set(0, -0.5, 0); // position.set(x, y, z)
     model.scale.set(1.1, 1.1, 1.1);
     
     
@@ -92,11 +91,6 @@ const clock = new THREE.Clock();
 function animate() {
     if (model) {
         mixer.update(clock.getDelta()); // Update the animation mixer
-        const baseY = -2.5; // Base position
-        const speed = 0.0015; // How fast it bobs
-        const amplitude = 0.2; // How high it goes up and down
-        
-        model.position.y = baseY + Math.sin(Date.now() * speed) * amplitude;
     }
 
     controls.update();
