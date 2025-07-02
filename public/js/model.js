@@ -77,8 +77,8 @@ loader.load(modelPath, function(gltf) {
     const action = mixer.clipAction(clip);
     action.play();
 
-    console.log('Model loaded successfully:', gltf);
-    console.log('Model position:', model.position);
+    // console.log('Model loaded successfully:', gltf);
+    // console.log('Model position:', model.position);
 
     model.position.set(0, 0, 0); // position.set(x, y, z)
     model.scale.set(1.1, 1.1, 1.1);

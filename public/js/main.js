@@ -72,3 +72,61 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// For zooming in images in the gallery
+function zoomIn(image) {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        cursor: zoom-out;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    `;
+
+    const zoomedImage = image.cloneNode();
+    zoomedImage.style.cssText = `
+        cursor: pointer;
+        filter: none;
+        max-width: 80%;
+        max-height: 80%;
+        width: 400px !important;
+        height: auto !important;
+    `;
+
+    const caption = document.createElement('p');
+    caption.textContent = image.dataset.caption || 'Untitled';
+    caption.style.cssText = `
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 30px;
+    `;
+
+    const tag = document.createElement('p');
+    tag.textContent = image.dataset.tag || 'No tag';
+    tag.style.cssText = `
+        color: yellowgreen;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 0;
+        border: 1px solid yellowgreen;
+        padding: 5px 10px;
+        border-radius: 50px;
+    `;
+
+    overlay.appendChild(zoomedImage);
+    overlay.appendChild(caption);
+    overlay.appendChild(tag);
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function() {
+        document.body.removeChild(overlay);
+    });
+}
+window.zoomIn = zoomIn;

@@ -50,6 +50,7 @@ controls.minPolarAngle = Math.PI / 2; // 90 degrees
 controls.maxPolarAngle = Math.PI / 2; // 90 degrees
 
 controls.enableZoom = false;
+controls.enablePan = false;
 
 // Model loading & animation ----------
 let mixer;
@@ -77,8 +78,8 @@ loader.load(modelPath, function(gltf) {
     action1.play();
     action2.play();
 
-    console.log('Model loaded successfully:', gltf);
-    console.log('Model position:', model.position);
+    // console.log('Model loaded successfully:', gltf);
+    // console.log('Model position:', model.position);
 
     model.position.set(0, -0.5, 0); // position.set(x, y, z)
     model.scale.set(1.1, 1.1, 1.1);

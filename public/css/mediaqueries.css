@@ -1,6 +1,6 @@
 @media screen and (max-width: 1200px) {
     #info-container {
-        width: 100%;
+        width: 90%;
     }
 
     #navbar {
@@ -49,9 +49,15 @@
     }
 
     /* ------ PROJECTS Modification ------- */
-    .tags {
-        font-size: 15px;
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
     }
+
+
+    /* ------ CONTACT Modification ------- */
 }
 
 @media screen and (max-width: 880px) {
@@ -89,6 +95,19 @@
         width: 90%;
         text-align: justify;
     }
+
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #contact {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -120,10 +139,6 @@
     #work p,
     #contact p {
         font-size: 16px;
-    }
-
-    #contact {
-        text-align: center;
     }
 
     #scroll-to-top {
