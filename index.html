@@ -80,29 +80,36 @@
         <!-- WORK SECTION -->
         <div id="work">
             <h1>Portfolio</h1>
-            <h2>Programming Projects</h2>
+            
+            <div class="tab-container">
+                <button class="tab-button active" onclick="showTab(event,'programming')">Programming Projects 💻</button>
+                <button class="tab-button" onclick="showTab(event,'hobbies')">Creative Works 🎨</button>
+            </div>
 
             <hr><br>
             <!-- PROGRAMMING PROJECTS -->
-            <div id="project-container">
-                <div class="project">
-                    <div class="project-img"></div>
-                    <div class="project-content">
-                        <h3><a href="https://deborahengelberg.github.io/COSI116A-Brandeis-InfoVis-Fall24.github.io/" target="_blank">Visualization Project (Fall 2024) <img src="/icons/openlink.svg"> </a></h3>
-                        <p>A team project that visualizes and analyzes the influences
-                            of alcohol consumption across various countries.</p>
-                        <p class="tags-container"><span class="tags">#HTML/CSS</span> <span class="tags">#JS</span> <span class="tags">#Pandas</span> <span class="tags">#TopoJSON</span> <span class="tags">#D3.js</span></p>
+            <div id="programming" class="tab-content active">
+                <div id="project-container">
+                    <div class="project">
+                        <div class="project-img"></div>
+                        <div class="project-content">
+                            <h3><a href="https://deborahengelberg.github.io/COSI116A-Brandeis-InfoVis-Fall24.github.io/" target="_blank">Visualization Project (Fall 2024) <img src="/icons/openlink.svg"> </a></h3>
+                            <p>A team project that visualizes and analyzes the influences
+                                of alcohol consumption across various countries.</p>
+                            <p class="tags-container"><span class="tags">#HTML/CSS</span> <span class="tags">#JS</span> <span class="tags">#Pandas</span> <span class="tags">#TopoJSON</span> <span class="tags">#D3.js</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
             <br>
-            <h2>Hobbies</h2>
-            <hr><br>
+
             <!-- GALLERY -->
+            <div id="hobbies" class="tab-content">
                 <div class="gallery">
                     <img src="misc/fish-snatcher.png" class="sketches" data-caption="Fish Snatcher" data-tag="#Medibang" alt="Test portrait" onclick="zoomIn(this)" oncontextmenu="return false;" ondragstart="return false;">
                     <!-- <img src="misc/drawing1.png" class="sketches" data-caption="Thinking Mechanic" data-tag="#Medibang" alt="Test2 portrait" onclick="zoomIn(this)" oncontextmenu="return false;" ondragstart="return false;"> -->
                 </div>
+            </div>
         </div>
         <div id="contact">
             <h1>Thanks for Visiting!</h1>

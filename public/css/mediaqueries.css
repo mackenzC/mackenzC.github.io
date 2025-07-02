@@ -155,3 +155,10 @@
     }
 
 }
+
+@media screen and (max-width: 400px) {
+    #fun-button {
+        font-size: 18px;
+        padding: 12px 28px;
+    }
+}

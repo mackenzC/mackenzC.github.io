@@ -74,6 +74,7 @@ window.addEventListener('scroll', function() {
 
 // For zooming in images in the gallery
 function zoomIn(image) {
+
     const overlay = document.createElement('div');
     overlay.style.cssText = `
         cursor: zoom-out;
@@ -130,3 +131,26 @@ function zoomIn(image) {
     });
 }
 window.zoomIn = zoomIn;
+
+
+// For the tabs in the main page
+function showTab(e, tabName) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const targetElement = document.getElementById(tabName);
+    if (targetElement) {
+        targetElement.classList.add('active');
+        e.target.classList.add('active');
+    } else {
+        console.error(`Element with id "${tabName}" not found`);
+    }
+}
+window.showTab = showTab;
