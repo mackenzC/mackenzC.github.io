@@ -82,8 +82,8 @@
             <h1>Portfolio</h1>
             
             <div class="tab-container">
-                <button class="tab-button active" onclick="showTab(event,'programming')">Programming Projects 💻</button>
-                <button class="tab-button" onclick="showTab(event,'hobbies')">Creative Works 🎨</button>
+                <button class="tab-button active" onclick="showTab(event,'programming')">Programming 💻</button>
+                <button class="tab-button" onclick="showTab(event,'hobbies')">Sketchbook 🎨</button>
             </div>
 
             <hr><br>
@@ -92,6 +92,14 @@
                 <div id="project-container">
                     <div class="project">
                         <div class="project-img"></div>
+                        <div class="project-content">
+                            <h3><a href="https://github.com/mackenzC/mackenzC.github.io" target="_blank">Personal Website Repo<img src="/icons/openlink.svg"> </a></h3>
+                            <p>A project to redesign my personal website with a focus on aesthetics and user experience.</p>
+                            <p class="tags-container"><span class="tags">#HTML/CSS</span> <span class="tags">#JS</span> <span class="tags">#Three.js</span> <span class="arttags">#Blender</span></p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-img"><img src="/icons/WHITE.svg" alt="Visualization Project Logo"></div>
                         <div class="project-content">
                             <h3><a href="https://deborahengelberg.github.io/COSI116A-Brandeis-InfoVis-Fall24.github.io/" target="_blank">Visualization Project (Fall 2024) <img src="/icons/openlink.svg"> </a></h3>
                             <p>A team project that visualizes and analyzes the influences
@@ -107,7 +115,6 @@
             <div id="hobbies" class="tab-content">
                 <div class="gallery">
                     <img src="misc/fish-snatcher.png" class="sketches" data-caption="Fish Snatcher" data-tag="#Medibang" alt="Test portrait" onclick="zoomIn(this)" oncontextmenu="return false;" ondragstart="return false;">
-                    <!-- <img src="misc/drawing1.png" class="sketches" data-caption="Thinking Mechanic" data-tag="#Medibang" alt="Test2 portrait" onclick="zoomIn(this)" oncontextmenu="return false;" ondragstart="return false;"> -->
                 </div>
             </div>
         </div>
