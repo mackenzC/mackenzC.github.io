@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: "Fredoka", sans-serif;
+    background-color: #252336;
+  }
+  h1 {
+    text-align: center;
+    line-height: 2.5rem;
+  }
+
+  .scroll-link-tech,
+  .scroll-link-art {
+    display: inline;
+    padding: 0 4px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 4px;
+    transition:
+      background-size 0.3s ease-out,
+      color 0.2s ease-out;
+    text-decoration: none;
+  }
+
+  .scroll-link-tech {
+    background-image: linear-gradient(to top, #16a34a, #fbe35a93);
+    color: inherit;
+  }
+  .scroll-link-tech:hover {
+    background-size: 100% 100%;
+    color: #ffffff;
+  }
+
+  .scroll-link-art {
+    background-image: linear-gradient(to top, #d27931, #fbe35a93);
+    color: inherit;
+  }
+  .scroll-link-art:hover {
+    background-size: 100% 100%;
+    color: #ffffff;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4a4666 #252336;
+  }
+}
